@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adri ❤️ José Luis | 4 meses</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Georgia,serif;
+    color:white;
+
+    background:
+        radial-gradient(circle at 20% 20%,#68163f 0%,transparent 30%),
+        radial-gradient(circle at 80% 70%,#42134f 0%,transparent 30%),
+        linear-gradient(135deg,#09000b,#270016,#10000f);
+
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    min-height:100vh;
+    min-height:100svh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px 20px;
+
+    position:relative;
+}
+
+.contenido{
+    width:min(900px,94%);
+    text-align:center;
+    z-index:2;
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+h1{
+    font-size:clamp(42px,8vw,78px);
+    margin:10px 0;
+
+    text-shadow:
+        0 0 15px #ff4f91,
+        0 0 35px #ff4f9166;
+}
+
+h2{
+    font-size:clamp(30px,6vw,50px);
+    margin-bottom:20px;
+}
+
+p{
+    font-size:19px;
+    line-height:1.8;
+}
+
+.subtitulo{
+    font-size:22px;
+    opacity:.85;
+}
+
+.fecha{
+    margin-top:20px;
+    opacity:.7;
+}
+
+.pequeno{
+    opacity:.65;
+    font-size:15px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+    margin:25px 8px 10px;
+
+    padding:15px 30px;
+
+    border:none;
+    border-radius:40px;
+
+    background:#ff4f91;
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px #ff4f9166;
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 35px #ff4f91;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+
+/* =========================
+   CORAZONES DEL FONDO
+========================= */
+
+.fondo-corazones{
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:0;
+}
+
+.corazon{
+    position:absolute;
+
+    bottom:-50px;
+
+    animation:flotar linear forwards;
+
+    opacity:.7;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   MAPA / DISTANCIA
+========================= */
+
+.mapa{
+    width:min(800px,95%);
+
+    height:300px;
+
+    margin:30px auto;
+
+    position:relative;
+}
+
+.pais{
+    position:absolute;
+
+    top:80px;
+
+    font-size:25px;
+}
+
+.mexico{
+    left:5%;
+}
+
+.ecuador{
+    right:5%;
+}
+
+.corazon-mex,
+.corazon-ecu{
+
+    font-size:70px;
+
+    display:block;
+
+    filter:
+        drop-shadow(0 0 15px #ff4f91);
+}
+
+.linea{
+
+    position:absolute;
+
+    top:120px;
+
+    left:15%;
+
+    width:70%;
+
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff4f91,
+            white,
+            #ff4f91,
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px #ff4f91;
+}
+
+.corazon-viajero{
+
+    position:absolute;
+
+    top:90px;
+
+    left:10%;
+
+    font-size:45px;
+
+    opacity:0;
+}
+
+.unido .corazon-viajero{
+
+    opacity:1;
+
+    animation:
+        viaje 2.5s forwards;
+}
+
+@keyframes viaje{
+
+    0%{
+        left:10%;
+        transform:scale(.7);
+    }
+
+    50%{
+        left:48%;
+        transform:scale(1.4);
+    }
+
+    100%{
+        left:48%;
+        transform:scale(2);
+    }
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjeta{
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(15px);
+
+    padding:35px;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 0 50px rgba(255,50,130,.15);
+}
+
+.frase{
+
+    font-size:25px;
+
+    font-style:italic;
+
+    margin:30px 0;
+
+    color:#ffc3da;
+
+    text-shadow:
+        0 0 10px rgba(255,80,150,.3);
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia{
+
+    min-height:250px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:21px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   NUMERO 4
+========================= */
+
+.numero{
+
+    font-size:110px;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 0 20px #ff4f91,
+        0 0 50px #ff4f9166;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta{
+
+    text-align:left;
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    line-height:1.9;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 40px rgba(255,50,130,.15);
+}
+
+.carta h2{
+    text-align:center;
+}
+
+.firma{
+
+    text-align:right;
+
+    font-size:25px;
+
+    margin-top:30px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    background:
+        radial-gradient(
+            circle,
+            #68163f,
+            #15000d 70%
+        );
+}
+
+.final-corazon{
+
+    font-size:130px;
+
+    animation:
+        pulso 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 30px #ff4f91);
+}
+
+@keyframes pulso{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+.oculto{
+    display:none;
+}
+
+.aparecer{
+
+    animation:
+        aparecer 1s ease;
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ==================================================
+   📱 RESPONSIVE PARA CELULAR
+================================================== */
+
+@media(max-width:600px){
+
+    section{
+
+        min-height:100svh;
+
+        padding:
+            25px 15px;
+    }
+
+
+    .contenido{
+
+        width:100%;
+    }
+
+
+    h1{
+
+        font-size:42px;
+
+        line-height:1.15;
+    }
+
+
+    h2{
+
+        font-size:30px;
+
+        line-height:1.2;
+    }
+
+
+    p{
+
+        font-size:17px;
+
+        line-height:1.65;
+    }
+
+
+    .subtitulo{
+
+        font-size:18px;
+
+        line-height:1.5;
+    }
+
+
+    .fecha{
+
+        font-size:14px;
+    }
+
+
+    .tarjeta{
+
+        padding:25px 18px;
+
+        border-radius:22px;
+    }
+
+
+    .carta{
+
+        padding:25px 18px;
+
+        border-radius:22px;
+
+        line-height:1.7;
+    }
+
+
+    .carta p{
+
+        font-size:17px;
+    }
+
+
+    button{
+
+        width:90%;
+
+        max-width:300px;
+
+        padding:
+            14px 20px;
+
+        font-size:16px;
+    }
+
+
+    /* MAPA CELULAR */
+
+    .mapa{
+
+        width:100%;
+
+        height:270px;
+
+        margin:15px auto;
+    }
+
+
+    .pais{
+
+        font-size:18px;
+
+        top:75px;
+    }
+
+
+    .mexico{
+
+        left:2%;
+    }
+
+
+    .ecuador{
+
+        right:2%;
+    }
+
+
+    .corazon-mex,
+    .corazon-ecu{
+
+        font-size:52px;
+    }
+
+
+    .linea{
+
+        top:105px;
+
+        left:18%;
+
+        width:64%;
+
+        height:3px;
+    }
+
+
+    .corazon-viajero{
+
+        top:82px;
+
+        font-size:35px;
+    }
+
+
+    @keyframes viaje{
+
+        0%{
+            left:8%;
+            transform:scale(.7);
+        }
+
+        50%{
+            left:45%;
+            transform:scale(1.3);
+        }
+
+        100%{
+            left:45%;
+            transform:scale(1.8);
+        }
+    }
+
+
+    /* HISTORIA */
+
+    .historia{
+
+        font-size:18px;
+
+        min-height:280px;
+
+        padding:5px;
+    }
+
+
+    .frase{
+
+        font-size:21px;
+
+        line-height:1.6;
+    }
+
+
+    /* NUMERO */
+
+    .numero{
+
+        font-size:85px;
+    }
+
+
+    /* CORAZÓN FINAL */
+
+    .final-corazon{
+
+        font-size:100px;
+    }
+
+
+    .final h1{
+
+        font-size:40px;
+    }
+
+}
+
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+========================= */
+
+@media(max-width:380px){
+
+    h1{
+
+        font-size:36px;
+    }
+
+    h2{
+
+        font-size:27px;
+    }
+
+    p{
+
+        font-size:16px;
+    }
+
+    .tarjeta,
+    .carta{
+
+        padding:20px 15px;
+    }
+
+    .mapa{
+
+        height:250px;
+    }
+
+    .pais{
+
+        font-size:16px;
+    }
+
+    .corazon-mex,
+    .corazon-ecu{
+
+        font-size:45px;
+    }
+
+    .numero{
+
+        font-size:75px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     CORAZONES FLOTANDO
+================================================== -->
+
+<div
+    class="fondo-corazones"
+    id="corazones">
+</div>
+
+
+
+<!-- ==================================================
+     PORTADA
+================================================== -->
+
+<section>
+
+<div class="contenido">
+
+<div
+    style="
+    font-size:80px;
+    filter:drop-shadow(0 0 20px #ff4f91);
+    ">
+    ❤️
+</div>
+
+<h1>
+    Adri & José Luis
+</h1>
+
+<div class="subtitulo">
+
+    Una historia que comenzó
+    a distancia...
+
+</div>
+
+<div class="fecha">
+
+    6 de junio de 2026 · 4 meses
+
+</div>
+
+<button onclick="irA('distancia')">
+
+    Abrir nuestra historia 💌
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     MÉXICO - ECUADOR
+================================================== -->
+
+<section id="distancia">
+
+<div class="contenido">
+
+<h2>
+    Dos países...
+</h2>
+
+<p class="subtitulo">
+
+    pero dos corazones
+    que decidieron encontrarse.
+
+</p>
+
+
+<div
+    class="mapa"
+    id="mapa"
+>
+
+
+<!-- MÉXICO -->
+
+<div class="pais mexico">
+
+<span class="corazon-mex">
+    ❤️
+</span>
+
+🇲🇽 México
+
+<br>
+
+<small>
+    Adri
+</small>
+
+</div>
+
+
+<!-- LÍNEA -->
+
+<div class="linea"></div>
+
+
+<!-- CORAZÓN VIAJANDO -->
+
+<div class="corazon-viajero">
+    ❤️
+</div>
+
+
+<!-- ECUADOR -->
+
+<div class="pais ecuador">
+
+<span class="corazon-ecu">
+    ❤️
+</span>
+
+🇪🇨 Ecuador
+
+<br>
+
+<small>
+    José Luis
+</small>
+
+</div>
+
+</div>
+
+
+<button onclick="unirCorazones()">
+
+    Unir nuestros corazones ❤️
+
+</button>
+
+
+<p
+    id="mensajeDistancia"
+    class="oculto aparecer"
+>
+
+    La distancia puso kilómetros
+    entre nosotros...
+
+    <br><br>
+
+    pero no pudo ponerlos
+    entre nuestros corazones.
+
+</p>
+
+
+<button onclick="irA('inicio')">
+
+    Continuar 💕
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CÓMO COMENZÓ
+================================================== -->
+
+<section id="inicio">
+
+<div class="contenido">
+
+<h2>
+    Y todo comenzó así...
+</h2>
+
+
+<div class="tarjeta">
+
+
+<div
+    class="historia"
+    id="historia"
+>
+
+    Nos conocimos en un grupo
+    de una comunidad.
+
+    <br><br>
+
+    Yo mandaba mis audios
+    presentándome,
+
+    sin imaginar que alguien
+    estaba escuchando mi voz
+    de una manera diferente. ❤️
+
+</div>
+
+
+<button onclick="siguienteHistoria()">
+
+    Seguir leyendo...
+
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PRIMER MENSAJE
+================================================== -->
+
+<section>
+
+<div class="contenido">
+
+<div class="tarjeta">
+
+<h2>
+    Entonces llegaste tú...
+</h2>
+
+
+<p>
+
+    Después de unos días
+    recibí un mensaje tuyo
+    por privado.
+
+</p>
+
+
+<div class="frase">
+
+    “Disculpa que te moleste...
+    <br>
+    no quiero incomodarte,
+    <br>
+    pero ¿te puedo mandar
+    un mensaje?”
+
+</div>
+
+
+<p>
+
+    Y yo simplemente contesté:
+
+</p>
+
+
+<div class="frase">
+
+    “Sí, ¿por qué no?”
+
+</div>
+
+
+<button onclick="irA('voz')">
+
+    Y ahí comenzó todo ❤️
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     LA VOZ
+================================================== -->
+
+<section id="voz">
+
+<div class="contenido">
+
+<div class="tarjeta">
+
+<h2>
+    Tu voz favorita
+</h2>
+
+
+<p>
+
+    Después empezaste
+    a escribirme todos los días.
+
+</p>
+
+
+<div class="frase">
+
+    “Adri...
+    cómo me encanta tu voz.”
+
+</div>
+
+
+<p>
+
+    Y yo, tratando de poner distancia,
+    te decía:
+
+</p>
+
+
+<div class="frase">
+
+    “No me digas así
+    porque te vas a enamorar.”
+
+</div>
+
+
+<button onclick="mostrarVerdad()">
+
+    Pero había un pequeño problema...
+
+</button>
+
+
+<p
+    id="verdad"
+    class="oculto aparecer"
+>
+
+    La que tenía miedo
+    de enamorarse...
+
+    <br><br>
+
+    <strong>
+        terminó cayendo redondita. ❤️
+    </strong>
+
+</p>
+
+
+<button onclick="irA('meses')">
+
+    Continuar ❤️
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     4 MESES
+================================================== -->
+
+<section id="meses">
+
+<div class="contenido">
+
+<div class="tarjeta">
+
+<p>
+    Y sin darnos cuenta...
+</p>
+
+
+<div class="numero">
+    4
+</div>
+
+
+<h2>
+    MESES ❤️
+</h2>
+
+
+<p>
+
+    Cuatro meses de mensajes,
+
+    <br>
+
+    audios, llamadas, risas,
+
+    <br>
+
+    cariño y una historia
+    que comenzó
+
+    <br>
+
+    sin que ninguno de los dos
+    la estuviera buscando.
+
+</p>
+
+
+<button onclick="irA('carta')">
+
+    Abrir mi carta 💌
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CARTA
+================================================== -->
+
+<section id="carta">
+
+<div class="contenido">
+
+<div class="carta">
+
+<h2>
+    Para ti, José Luis ❤️
+</h2>
+
+
+<p>
+
+    Mi José Luis:
+
+</p>
+
+
+<p>
+
+    Hoy quiero escribirte estas palabras
+    porque hay historias que uno no planea
+    y, sin embargo, terminan convirtiéndose
+    en algo muy importante.
+
+</p>
+
+
+<p>
+
+    Nuestra historia comenzó con un mensaje,
+
+    con una voz que escuchaste desde Ecuador
+
+    y con una mujer en México que jamás imaginó
+
+    todo lo que podía venir después.
+
+</p>
+
+
+<p>
+
+    Tú llegaste poquito a poquito...
+
+    con tus mensajes, tus palabras,
+
+    tu manera de hacerme sentir especial.
+
+</p>
+
+
+<p>
+
+    Y yo decía que no quería
+    que te enamoraras.
+
+</p>
+
+
+<p>
+
+    Qué curioso...
+
+    porque mientras intentaba protegerte a ti,
+
+    yo también me estaba enamorando.
+
+</p>
+
+
+<p>
+
+    Hoy, cuatro meses después,
+
+    solo quiero agradecerte
+    por haber aparecido en mi vida
+
+    y por todos esos momentos
+    que hemos compartido
+    a pesar de los kilómetros.
+
+</p>
+
+
+<p>
+
+    Porque sí...
+
+    México y Ecuador están lejos.
+
+    Pero hay veces que una persona
+    puede sentirse mucho más cerca
+
+    que alguien que está
+    a unos cuantos pasos.
+
+</p>
+
+
+<p>
+
+    Gracias por estos cuatro meses,
+
+    por tu cariño
+    y por nuestra historia.
+
+</p>
+
+
+<div class="firma">
+
+    Con cariño,
+
+    <br>
+
+    <strong>
+        Adri ❤️
+    </strong>
+
+</div>
+
+
+<button onclick="irA('final')">
+
+    Tengo algo más que decirte...
+
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section
+    id="final"
+    class="final"
+>
+
+<div class="contenido">
+
+
+<div class="final-corazon">
+
+    ❤️
+
+</div>
+
+
+<h1>
+
+    🇲🇽 ❤️ 🇪🇨
+
+</h1>
+
+
+<h2>
+
+    Dos países.
+
+    <br>
+
+    Una historia.
+
+</h2>
+
+
+<p>
+
+    Miles de kilómetros...
+
+    <br>
+
+    pero un lugar donde siempre
+    podemos encontrarnos:
+
+    <br><br>
+
+    <strong>
+        en el corazón. ❤️
+    </strong>
+
+</p>
+
+
+<button onclick="mostrarFinal()">
+
+    Abrir último mensaje 💌
+
+</button>
+
+
+<div
+    id="ultimo"
+    class="oculto aparecer"
+>
+
+<div class="tarjeta">
+
+<h2>
+
+    José Luis...
+
+</h2>
+
+
+<p>
+
+    Gracias por estos 4 meses.
+
+</p>
+
+
+<p>
+
+    Y gracias por aquella primera vez
+    que decidiste escribirme.
+
+</p>
+
+
+<div class="frase">
+
+    “¿Te puedo mandar un mensaje?”
+
+</div>
+
+
+<p>
+
+    Porque sin saberlo,
+
+    ese mensaje cambió
+    muchas cosas.
+
+</p>
+
+
+<h2>
+
+    ❤️ Te quiero ❤️
+
+</h2>
+
+
+<p class="pequeno">
+
+    6 · junio · 2026
+
+</p>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+
+/* =========================
+   NAVEGAR
+========================= */
+
+function irA(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
+
+function crearCorazon(){
+
+    const c =
+        document.createElement("div");
+
+    c.className="corazon";
+
+    c.innerHTML =
+        Math.random() > .2
+        ? "❤️"
+        : "💕";
+
+
+    c.style.left =
+        Math.random()*100 + "%";
+
+
+    c.style.fontSize =
+        (15 + Math.random()*25) + "px";
+
+
+    c.style.animationDuration =
+        (5 + Math.random()*6) + "s";
+
+
+    document
+        .getElementById("corazones")
+        .appendChild(c);
+
+
+    setTimeout(()=>{
+
+        c.remove();
+
+    },11000);
+
+}
+
+
+setInterval(
+    crearCorazon,
+    500
+);
+
+
+
+/* =========================
+   UNIR CORAZONES
+========================= */
+
+function unirCorazones(){
+
+    document
+        .getElementById("mapa")
+        .classList.add("unido");
+
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("mensajeDistancia")
+            .classList.remove("oculto");
+
+    },2500);
+
+}
+
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+const historias = [
+
+`
+Después de unos días
+recibí tu mensaje por privado.
+
+<br><br>
+
+Fue un mensaje muy respetuoso,
+como si no quisieras incomodarme.
+
+<br><br>
+
+Y yo te dije:
+
+<br><br>
+
+<strong>
+“Sí, ¿por qué no?”
+</strong>
+`,
+
+`
+A partir de ahí empezaste
+a escribirme todos los días.
+
+<br><br>
+
+Y poco a poco tus mensajes
+se fueron convirtiendo
+en parte de mis días.
+`,
+
+`
+Siempre me decías:
+
+<br><br>
+
+<strong>
+“Adri, cómo me encanta tu voz.”
+</strong>
+
+<br><br>
+
+Y yo insistía:
+
+<br><br>
+
+“No me digas así
+porque te vas a enamorar.”
+`,
+
+`
+Yo pensaba que estaba cuidándome
+de no enamorarme...
+
+<br><br>
+
+pero la vida tenía
+otros planes.
+`,
+
+`
+Y aquí estamos.
+
+<br><br>
+
+Cuatro meses después,
+
+<br>
+
+recordando aquel primer mensaje
+que comenzó todo. ❤️
+`
+
+];
+
+
+let paso=0;
+
+
+function siguienteHistoria(){
+
+    const elemento =
+        document.getElementById("historia");
+
+
+    if(paso < historias.length){
+
+        elemento.classList.remove(
+            "aparecer"
+        );
+
+
+        void elemento.offsetWidth;
+
+
+        elemento.innerHTML =
+            historias[paso];
+
+
+        elemento.classList.add(
+            "aparecer"
+        );
+
+
+        paso++;
+
+    }
+
+    else{
+
+        irA("voz");
+
+    }
+
+}
+
+
+
+/* =========================
+   MOSTRAR VERDAD
+========================= */
+
+function mostrarVerdad(){
+
+    document
+        .getElementById("verdad")
+        .classList.remove("oculto");
+
+}
+
+
+
+/* =========================
+   FINAL
+========================= */
+
+function mostrarFinal(){
+
+    document
+        .getElementById("ultimo")
+        .classList.remove("oculto");
+
+}
+
+</script>
+
+</body>
+</html>
