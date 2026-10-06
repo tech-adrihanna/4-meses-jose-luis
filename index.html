@@ -8,6 +8,10 @@
 
 <style>
 
+/* =========================
+   BASE
+========================= */
+
 *{
     box-sizing:border-box;
 }
@@ -19,7 +23,7 @@ html{
 body{
     margin:0;
     font-family:Georgia,serif;
-    color:white;
+    color:#fff;
 
     background:
         radial-gradient(circle at 20% 20%,#68163f 0%,transparent 30%),
@@ -29,67 +33,63 @@ body{
     overflow-x:hidden;
 }
 
-
-/* =========================
-   SECCIONES
-========================= */
-
 section{
-    min-height:100vh;
     min-height:100svh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    padding:50px 20px;
-
+    padding:70px 20px;
     position:relative;
 }
 
 .contenido{
-    width:min(900px,94%);
+    width:min(850px,100%);
     text-align:center;
+    position:relative;
     z-index:2;
 }
 
 
 /* =========================
-   TEXTOS
+   TIPOGRAFÍA
 ========================= */
 
 h1{
-    font-size:clamp(42px,8vw,78px);
-    margin:10px 0;
-
+    font-size:clamp(42px,7vw,72px);
+    line-height:1.1;
+    margin:15px 0;
     text-shadow:
         0 0 15px #ff4f91,
         0 0 35px #ff4f9166;
 }
 
 h2{
-    font-size:clamp(30px,6vw,50px);
-    margin-bottom:20px;
+    font-size:clamp(30px,5vw,46px);
+    line-height:1.2;
+    margin:0 0 25px;
 }
 
 p{
     font-size:19px;
-    line-height:1.8;
+    line-height:1.75;
+    margin:15px 0;
 }
 
 .subtitulo{
     font-size:22px;
-    opacity:.85;
+    line-height:1.5;
+    opacity:.9;
 }
 
 .fecha{
+    font-size:16px;
     margin-top:20px;
     opacity:.7;
 }
 
 .pequeno{
+    font-size:14px;
     opacity:.65;
-    font-size:15px;
 }
 
 
@@ -98,49 +98,81 @@ p{
 ========================= */
 
 button{
-    margin:25px 8px 10px;
+    display:inline-block;
+    margin:25px 6px 5px;
+    padding:13px 24px;
 
-    padding:15px 30px;
-
-    border:none;
+    border:0;
     border-radius:40px;
 
     background:#ff4f91;
-    color:white;
+    color:#fff;
 
-    font-size:17px;
+    font-family:Georgia,serif;
+    font-size:16px;
+    line-height:1.2;
 
     cursor:pointer;
 
-    box-shadow:
-        0 0 20px #ff4f9166;
-
+    box-shadow:0 0 20px #ff4f9166;
     transition:.3s;
 }
 
 button:hover{
-    transform:scale(1.08);
-
-    box-shadow:
-        0 0 35px #ff4f91;
+    transform:scale(1.05);
+    box-shadow:0 0 30px #ff4f91;
 }
 
 button:active{
-    transform:scale(.96);
+    transform:scale(.97);
 }
 
 
 /* =========================
-   CORAZONES DEL FONDO
+   TARJETAS
+========================= */
+
+.tarjeta{
+    width:100%;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    padding:38px;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 0 50px rgba(255,50,130,.15);
+}
+
+.frase{
+    margin:25px 0;
+
+    font-size:24px;
+    line-height:1.5;
+
+    font-style:italic;
+
+    color:#ffc3da;
+
+    text-shadow:
+        0 0 10px rgba(255,80,150,.3);
+}
+
+
+/* =========================
+   CORAZONES
 ========================= */
 
 .fondo-corazones{
     position:fixed;
-
     inset:0;
 
     pointer-events:none;
-
     overflow:hidden;
 
     z-index:0;
@@ -148,21 +180,16 @@ button:active{
 
 .corazon{
     position:absolute;
-
     bottom:-50px;
 
     animation:flotar linear forwards;
-
     opacity:.7;
 }
 
 @keyframes flotar{
 
     0%{
-        transform:
-            translateY(0)
-            rotate(0deg);
-
+        transform:translateY(0) rotate(0);
         opacity:0;
     }
 
@@ -171,67 +198,61 @@ button:active{
     }
 
     100%{
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
+        transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
 
 /* =========================
-   MAPA / DISTANCIA
+   MAPA
 ========================= */
 
 .mapa{
-    width:min(800px,95%);
+    width:100%;
+    max-width:760px;
+    height:270px;
 
-    height:300px;
-
-    margin:30px auto;
+    margin:20px auto;
 
     position:relative;
 }
 
 .pais{
     position:absolute;
+    top:65px;
 
-    top:80px;
+    width:130px;
 
-    font-size:25px;
+    font-size:21px;
+    line-height:1.4;
 }
 
 .mexico{
-    left:5%;
+    left:0;
 }
 
 .ecuador{
-    right:5%;
+    right:0;
 }
 
 .corazon-mex,
 .corazon-ecu{
-
-    font-size:70px;
-
     display:block;
+
+    font-size:60px;
 
     filter:
         drop-shadow(0 0 15px #ff4f91);
 }
 
 .linea{
-
     position:absolute;
 
-    top:120px;
-
+    top:105px;
     left:15%;
-
     width:70%;
-
-    height:4px;
+    height:3px;
 
     background:
         linear-gradient(
@@ -243,29 +264,23 @@ button:active{
             transparent
         );
 
-    box-shadow:
-        0 0 20px #ff4f91;
+    box-shadow:0 0 20px #ff4f91;
 }
 
 .corazon-viajero{
-
     position:absolute;
 
-    top:90px;
-
+    top:82px;
     left:10%;
 
-    font-size:45px;
+    font-size:40px;
 
     opacity:0;
 }
 
 .unido .corazon-viajero{
-
     opacity:1;
-
-    animation:
-        viaje 2.5s forwards;
+    animation:viaje 2.5s forwards;
 }
 
 @keyframes viaje{
@@ -277,51 +292,13 @@ button:active{
 
     50%{
         left:48%;
-        transform:scale(1.4);
+        transform:scale(1.3);
     }
 
     100%{
         left:48%;
-        transform:scale(2);
+        transform:scale(1.7);
     }
-}
-
-
-/* =========================
-   TARJETAS
-========================= */
-
-.tarjeta{
-
-    background:
-        rgba(255,255,255,.08);
-
-    border:
-        1px solid rgba(255,255,255,.18);
-
-    backdrop-filter:
-        blur(15px);
-
-    padding:35px;
-
-    border-radius:30px;
-
-    box-shadow:
-        0 0 50px rgba(255,50,130,.15);
-}
-
-.frase{
-
-    font-size:25px;
-
-    font-style:italic;
-
-    margin:30px 0;
-
-    color:#ffc3da;
-
-    text-shadow:
-        0 0 10px rgba(255,80,150,.3);
 }
 
 
@@ -330,18 +307,14 @@ button:active{
 ========================= */
 
 .historia{
-
-    min-height:250px;
+    min-height:240px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    font-size:21px;
-
-    line-height:1.8;
+    font-size:20px;
+    line-height:1.75;
 }
 
 
@@ -350,10 +323,12 @@ button:active{
 ========================= */
 
 .numero{
-
-    font-size:110px;
+    font-size:115px;
+    line-height:1;
 
     font-weight:bold;
+
+    margin:20px 0;
 
     text-shadow:
         0 0 20px #ff4f91,
@@ -366,24 +341,22 @@ button:active{
 ========================= */
 
 .carta{
-
-    text-align:left;
-
+    width:100%;
     max-width:700px;
 
     margin:auto;
 
-    padding:35px;
+    padding:38px;
+
+    text-align:left;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
 
     border-radius:25px;
 
-    background:
-        rgba(255,255,255,.08);
-
-    line-height:1.9;
-
-    border:
-        1px solid rgba(255,255,255,.15);
+    line-height:1.8;
 
     box-shadow:
         0 0 40px rgba(255,50,130,.15);
@@ -393,11 +366,14 @@ button:active{
     text-align:center;
 }
 
-.firma{
+.carta p{
+    margin:18px 0;
+}
 
+.firma{
     text-align:right;
 
-    font-size:25px;
+    font-size:23px;
 
     margin-top:30px;
 }
@@ -408,7 +384,6 @@ button:active{
 ========================= */
 
 .final{
-
     background:
         radial-gradient(
             circle,
@@ -418,11 +393,9 @@ button:active{
 }
 
 .final-corazon{
+    font-size:120px;
 
-    font-size:130px;
-
-    animation:
-        pulso 1.5s infinite;
+    animation:pulso 1.5s infinite;
 
     filter:
         drop-shadow(0 0 30px #ff4f91);
@@ -435,195 +408,132 @@ button:active{
     }
 
     50%{
-        transform:scale(1.18);
+        transform:scale(1.15);
     }
 }
 
 
 /* =========================
-   ANIMACIÓN
+   ANIMACIONES
 ========================= */
 
 .oculto{
-    display:none;
+    display:none !important;
 }
 
 .aparecer{
-
-    animation:
-        aparecer 1s ease;
+    animation:aparecer .8s ease;
 }
 
 @keyframes aparecer{
 
     from{
         opacity:0;
-        transform:
-            translateY(30px);
+        transform:translateY(20px);
     }
 
     to{
         opacity:1;
-        transform:
-            translateY(0);
+        transform:translateY(0);
     }
 }
 
 
 /* ==================================================
-   📱 RESPONSIVE PARA CELULAR
+   📱 CELULAR
 ================================================== */
 
 @media(max-width:600px){
 
     section{
-
         min-height:100svh;
-
-        padding:
-            25px 15px;
+        padding:55px 14px;
     }
 
-
     .contenido{
-
         width:100%;
     }
 
-
     h1{
-
-        font-size:42px;
-
-        line-height:1.15;
+        font-size:40px;
+        line-height:1.12;
     }
-
 
     h2{
-
-        font-size:30px;
-
+        font-size:29px;
         line-height:1.2;
+        margin-bottom:20px;
     }
 
-
     p{
-
         font-size:17px;
-
         line-height:1.65;
     }
 
-
     .subtitulo{
-
         font-size:18px;
-
         line-height:1.5;
     }
 
-
     .fecha{
-
         font-size:14px;
     }
 
-
     .tarjeta{
-
         padding:25px 18px;
-
         border-radius:22px;
     }
 
-
-    .carta{
-
-        padding:25px 18px;
-
-        border-radius:22px;
-
-        line-height:1.7;
+    .frase{
+        font-size:20px;
+        line-height:1.5;
+        margin:22px 0;
     }
-
-
-    .carta p{
-
-        font-size:17px;
-    }
-
 
     button{
+        max-width:100%;
+        margin:20px 4px 4px;
+        padding:13px 19px;
+        font-size:15px;
+    }
 
-        width:90%;
 
-        max-width:300px;
+    /* MAPA */
 
-        padding:
-            14px 20px;
+    .mapa{
+        height:245px;
+        margin:10px auto;
+    }
 
+    .pais{
+        top:55px;
+        width:105px;
         font-size:16px;
     }
 
-
-    /* MAPA CELULAR */
-
-    .mapa{
-
-        width:100%;
-
-        height:270px;
-
-        margin:15px auto;
-    }
-
-
-    .pais{
-
-        font-size:18px;
-
-        top:75px;
-    }
-
-
     .mexico{
-
-        left:2%;
+        left:0;
     }
-
 
     .ecuador{
-
-        right:2%;
+        right:0;
     }
-
 
     .corazon-mex,
     .corazon-ecu{
-
-        font-size:52px;
+        font-size:48px;
     }
-
 
     .linea{
-
-        top:105px;
-
+        top:91px;
         left:18%;
-
         width:64%;
-
-        height:3px;
     }
-
 
     .corazon-viajero{
-
-        top:82px;
-
-        font-size:35px;
+        top:72px;
+        font-size:32px;
     }
-
 
     @keyframes viaje{
 
@@ -633,13 +543,13 @@ button:active{
         }
 
         50%{
-            left:45%;
-            transform:scale(1.3);
+            left:44%;
+            transform:scale(1.2);
         }
 
         100%{
-            left:45%;
-            transform:scale(1.8);
+            left:44%;
+            transform:scale(1.5);
         }
     }
 
@@ -647,95 +557,141 @@ button:active{
     /* HISTORIA */
 
     .historia{
+        min-height:230px;
+        padding:5px 0;
 
         font-size:18px;
-
-        min-height:280px;
-
-        padding:5px;
+        line-height:1.65;
     }
 
 
-    .frase{
-
-        font-size:21px;
-
-        line-height:1.6;
-    }
-
-
-    /* NUMERO */
+    /* 4 MESES */
 
     .numero{
-
-        font-size:85px;
+        font-size:82px;
+        margin:15px 0;
     }
 
 
-    /* CORAZÓN FINAL */
+    /* CARTA */
+
+    .carta{
+        padding:25px 18px;
+        border-radius:22px;
+        line-height:1.65;
+    }
+
+    .carta p{
+        font-size:16.5px;
+        line-height:1.65;
+        margin:15px 0;
+    }
+
+    .carta h2{
+        font-size:28px;
+    }
+
+    .firma{
+        font-size:21px;
+        margin-top:25px;
+    }
+
+
+    /* FINAL */
 
     .final-corazon{
-
-        font-size:100px;
+        font-size:90px;
     }
 
-
     .final h1{
+        font-size:38px;
+    }
 
-        font-size:40px;
+    .final h2{
+        font-size:29px;
     }
 
 }
 
 
-/* =========================
-   CELULARES MUY PEQUEÑOS
-========================= */
+/* ==================================================
+   📱 CELULARES PEQUEÑOS
+================================================== */
 
 @media(max-width:380px){
 
-    h1{
+    section{
+        padding:45px 12px;
+    }
 
-        font-size:36px;
+    h1{
+        font-size:34px;
     }
 
     h2{
-
-        font-size:27px;
+        font-size:26px;
     }
 
     p{
-
         font-size:16px;
     }
 
-    .tarjeta,
-    .carta{
+    .subtitulo{
+        font-size:17px;
+    }
 
-        padding:20px 15px;
+    .tarjeta{
+        padding:21px 14px;
+    }
+
+    .frase{
+        font-size:18px;
     }
 
     .mapa{
-
-        height:250px;
+        height:230px;
     }
 
     .pais{
-
-        font-size:16px;
+        width:95px;
+        font-size:14px;
     }
 
     .corazon-mex,
     .corazon-ecu{
-
-        font-size:45px;
+        font-size:42px;
     }
 
     .numero{
-
-        font-size:75px;
+        font-size:72px;
     }
 
+    .carta{
+        padding:22px 15px;
+    }
+
+    .carta p{
+        font-size:15.5px;
+    }
+
+}
+
+
+/* ==================================================
+   PREVENIR DESBORDES
+================================================== */
+
+p,
+h1,
+h2,
+div,
+span{
+    overflow-wrap:break-word;
+}
+
+img,
+video{
+    max-width:100%;
 }
 
 </style>
@@ -745,15 +701,12 @@ button:active{
 <body>
 
 
-<!-- ==================================================
-     CORAZONES FLOTANDO
-================================================== -->
+<!-- CORAZONES -->
 
 <div
     class="fondo-corazones"
     id="corazones">
 </div>
-
 
 
 <!-- ==================================================
@@ -766,7 +719,7 @@ button:active{
 
 <div
     style="
-    font-size:80px;
+    font-size:clamp(60px,12vw,80px);
     filter:drop-shadow(0 0 20px #ff4f91);
     ">
     ❤️
@@ -777,22 +730,15 @@ button:active{
 </h1>
 
 <div class="subtitulo">
-
-    Una historia que comenzó
-    a distancia...
-
+    Una historia que comenzó a distancia...
 </div>
 
 <div class="fecha">
-
     6 de junio de 2026 · 4 meses
-
 </div>
 
 <button onclick="irA('distancia')">
-
     Abrir nuestra historia 💌
-
 </button>
 
 </div>
@@ -800,9 +746,8 @@ button:active{
 </section>
 
 
-
 <!-- ==================================================
-     MÉXICO - ECUADOR
+     DISTANCIA
 ================================================== -->
 
 <section id="distancia">
@@ -810,24 +755,14 @@ button:active{
 <div class="contenido">
 
 <h2>
-    Dos países...
+    Dos países... 🇲🇽 ❤️ 🇪🇨
 </h2>
 
 <p class="subtitulo">
-
-    pero dos corazones
-    que decidieron encontrarse.
-
+    pero dos corazones que decidieron encontrarse.
 </p>
 
-
-<div
-    class="mapa"
-    id="mapa"
->
-
-
-<!-- MÉXICO -->
+<div class="mapa" id="mapa">
 
 <div class="pais mexico">
 
@@ -839,26 +774,15 @@ button:active{
 
 <br>
 
-<small>
-    Adri
-</small>
+<small>Adri</small>
 
 </div>
 
-
-<!-- LÍNEA -->
-
 <div class="linea"></div>
-
-
-<!-- CORAZÓN VIAJANDO -->
 
 <div class="corazon-viajero">
     ❤️
 </div>
-
-
-<!-- ECUADOR -->
 
 <div class="pais ecuador">
 
@@ -870,48 +794,36 @@ button:active{
 
 <br>
 
-<small>
-    José Luis
-</small>
+<small>José Luis</small>
 
 </div>
 
 </div>
-
 
 <button onclick="unirCorazones()">
-
     Unir nuestros corazones ❤️
-
 </button>
-
 
 <p
     id="mensajeDistancia"
-    class="oculto aparecer"
+    class="oculto"
 >
 
-    La distancia puso kilómetros
-    entre nosotros...
+    La distancia puso kilómetros entre nosotros...
 
     <br><br>
 
-    pero no pudo ponerlos
-    entre nuestros corazones.
+    pero no pudo ponerlos entre nuestros corazones.
 
 </p>
 
-
 <button onclick="irA('inicio')">
-
     Continuar 💕
-
 </button>
 
 </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -923,38 +835,25 @@ button:active{
 <div class="contenido">
 
 <h2>
-   Amorcito Corazon
+    Amorcito corazón ❤️
 </h2>
 
-
 <div class="tarjeta">
-
 
 <div
     class="historia"
     id="historia"
 >
 
-   Dicen que el amor entra por los ojos... <br>
-    y contigo fue exactamente así.
+   Amorcito corazón
 
     <br><br>
 
-   Me enamoré primero de tu mirada,  <br>
-    de esos ojos que tienen algo  <br>
-    que me encanta,  <br>
-    de esa sonrisa tan tuya que me derrite y <br>
-    de lo guapo que eres.❤️
-
 </div>
 
-
 <button onclick="siguienteHistoria()">
-
     Seguir leyendo...
-
 </button>
-
 
 </div>
 
@@ -963,9 +862,8 @@ button:active{
 </section>
 
 
-
 <!-- ==================================================
-     PRIMER MENSAJE
+     TUS CUALIDADES
 ================================================== -->
 
 <section>
@@ -975,48 +873,28 @@ button:active{
 <div class="tarjeta">
 
 <h2>
-    Pero después descubrí...
+    Y después descubrí mucho más...
 </h2>
 
-
 <p>
-
-    Tu forma amorosa de ser,  <br>
-    lo detallista que puedes llegar  <br>
-    a ser y esa manera tan tuya  <br>
-    de hacerme sentir especial <br>
-
+    Descubrí tu forma amorosa de ser,
+    lo inteligente que eres,
+    lo detallista que puedes llegar a ser
+    y esa manera tan tuya
+    de hacerme sentir especial.
 </p>
 
-
 <div class="frase">
-
-    Y qué ironía tan bonita... 
-    <br>
-   un optometrista terminó  <br>
-    enamorándome por la vista. 👀❤️
-
+    Tu mirada fue la que me atrapó...
 </div>
-
 
 <p>
-
-   Porque tu mirada fue la que me atrapó,
-
+    pero tu forma de ser fue la que hizo
+    que me quedara. ❤️
 </p>
-
-
-<div class="frase">
-
-   pero tu forma de ser fue la que hizo que me quedara.
-
-</div>
-
 
 <button onclick="irA('voz')">
-
-    Y ahí comenzó todo ❤️
-
+    Y entonces entendí la ironía... 👀
 </button>
 
 </div>
@@ -1026,9 +904,8 @@ button:active{
 </section>
 
 
-
 <!-- ==================================================
-     LA VOZ
+     OPTOMETRISTA / VOZ
 ================================================== -->
 
 <section id="voz">
@@ -1038,48 +915,37 @@ button:active{
 <div class="tarjeta">
 
 <h2>
-    Tú ayudas a otros a ver mejor, 
+    Qué ironía tan bonita... 👀
 </h2>
 
-
 <p>
-
-  pero conmigo hiciste algo diferente:
-
+    Tú ayudas a otros a ver mejor,
+    pero conmigo hiciste algo diferente:
 </p>
 
-
 <div class="frase">
-
-    me hiciste mirar hacia ti...
-
+    Un optometrista terminó
+    enamorándome por la vista. ❤️
 </div>
-
 
 <p>
-
-   y encontrar en tu mirada un lugar donde quería quedarme. ❤️
-
+    Me hiciste mirar hacia ti...
+    y encontrar en tu mirada
+    un lugar donde quería quedarme.
 </p>
 
-
-<div class="frase">
-
-    y aunque yo te decia que no te enamoraras de mi
-
-</div>
-
+<p>
+    Y aunque yo te decía
+    que no te enamoraras de mí...
+</p>
 
 <button onclick="mostrarVerdad()">
-
-    ya había un pequeño problema...
-
+    había un pequeño problema...
 </button>
-
 
 <p
     id="verdad"
-    class="oculto aparecer"
+    class="oculto"
 >
 
     La que tenía miedo
@@ -1093,11 +959,8 @@ button:active{
 
 </p>
 
-
 <button onclick="irA('meses')">
-
     Continuar ❤️
-
 </button>
 
 </div>
@@ -1105,7 +968,6 @@ button:active{
 </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -1122,42 +984,24 @@ button:active{
     Y sin darnos cuenta...
 </p>
 
-
 <div class="numero">
     4
 </div>
-
 
 <h2>
     MESES ❤️
 </h2>
 
-
 <p>
-
     Cuatro meses de mensajes,
-
-    <br>
-
     audios, llamadas, risas,
-
-    <br>
-
     cariño y una historia
-    que comenzó
-
-    <br>
-
-    sin que ninguno de los dos
-    la estuviera buscando.
-
+    que comenzó sin que ninguno
+    de los dos la estuviera buscando.
 </p>
 
-
 <button onclick="irA('carta')">
-
     Abrir mi carta 💌
-
 </button>
 
 </div>
@@ -1165,7 +1009,6 @@ button:active{
 </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -1182,132 +1025,80 @@ button:active{
     Para ti, José Luis ❤️
 </h2>
 
-
 <p>
-
     Mi José Luis:
-
 </p>
 
-
 <p>
-
     Hoy quiero escribirte estas palabras
     porque hay historias que uno no planea
     y, sin embargo, terminan convirtiéndose
     en algo muy importante.
-
 </p>
 
-
 <p>
-
     Nuestra historia comenzó con un mensaje,
-
     con una voz que escuchaste desde Ecuador
-
     y con una mujer en México que jamás imaginó
-
     todo lo que podía venir después.
-
 </p>
 
-
 <p>
-
     Tú llegaste poquito a poquito...
-
-    con tus mensajes, tus palabras,
-
-    tu manera de hacerme sentir especial.
-
+    con tus mensajes, tus palabras
+    y tu manera de hacerme sentir especial.
 </p>
 
-
 <p>
-
     Y yo decía que no quería
     que te enamoraras.
-
 </p>
 
-
 <p>
-
     Qué curioso...
-
     porque mientras intentaba protegerte a ti,
-
     yo también me estaba enamorando.
-
 </p>
 
-
 <p>
-
     Hoy, cuatro meses después,
-
     solo quiero agradecerte
     por haber aparecido en mi vida
-
     y por todos esos momentos
     que hemos compartido
     a pesar de los kilómetros.
-
 </p>
 
-
 <p>
-
     Porque sí...
-
     México y Ecuador están lejos.
-
     Pero hay veces que una persona
     puede sentirse mucho más cerca
-
     que alguien que está
     a unos cuantos pasos.
-
 </p>
-
 
 <p>
-
     Gracias por estos cuatro meses,
-
     por tu cariño
     y por nuestra historia.
-
 </p>
 
-
 <div class="firma">
-
     Con cariño,
-
     <br>
-
-    <strong>
-        Adri ❤️
-    </strong>
-
+    <strong>Adri ❤️</strong>
 </div>
 
-
 <button onclick="irA('final')">
-
     Tengo algo más que decirte...
-
 </button>
-
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -1321,126 +1112,79 @@ button:active{
 
 <div class="contenido">
 
-
 <div class="final-corazon">
-
     ❤️
-
 </div>
 
-
 <h1>
-
     🇲🇽 ❤️ 🇪🇨
-
 </h1>
 
-
 <h2>
-
     Dos países.
-
     <br>
-
     Una historia.
-
 </h2>
 
-
 <p>
-
     Miles de kilómetros...
-
-    <br>
-
+    <br><br>
     pero un lugar donde siempre
     podemos encontrarnos:
-
-    <br><br>
-
-    <strong>
-        en el corazón. ❤️
-    </strong>
-
 </p>
 
+<div class="frase">
+    en el corazón. ❤️
+</div>
 
 <button onclick="mostrarFinal()">
-
     Abrir último mensaje 💌
-
 </button>
-
 
 <div
     id="ultimo"
-    class="oculto aparecer"
+    class="oculto"
 >
 
 <div class="tarjeta">
 
 <h2>
-
     José Luis...
-
 </h2>
 
-
 <p>
-
     Gracias por estos 4 meses.
-
 </p>
 
-
 <p>
-
     Y gracias por aquella primera vez
     que decidiste escribirme.
-
 </p>
-
 
 <div class="frase">
-
     “¿Te puedo mandar un mensaje?”
-
 </div>
-
 
 <p>
-
     Porque sin saberlo,
-
-    ese mensaje cambió
-    muchas cosas.
-
+    ese mensaje cambió muchas cosas.
 </p>
-
 
 <h2>
-
     ❤️ Te quiero ❤️
-
 </h2>
 
-
 <p class="pequeno">
-
     6 · junio · 2026
-
 </p>
 
-
 </div>
 
 </div>
-
 
 </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -1449,161 +1193,146 @@ button:active{
 
 <script>
 
-
-/* =========================
-   NAVEGAR
-========================= */
+/* NAVEGACIÓN */
 
 function irA(id){
 
-    document
-        .getElementById(id)
-        .scrollIntoView({
-            behavior:"smooth"
+    const elemento = document.getElementById(id);
+
+    if(elemento){
+
+        elemento.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
         });
+
+    }
 
 }
 
 
-
-/* =========================
-   CORAZONES FLOTANDO
-========================= */
+/* CORAZONES */
 
 function crearCorazon(){
+
+    const contenedor =
+        document.getElementById("corazones");
+
+    if(!contenedor) return;
 
     const c =
         document.createElement("div");
 
     c.className="corazon";
 
-    c.innerHTML =
+    c.textContent =
         Math.random() > .2
         ? "❤️"
         : "💕";
 
-
     c.style.left =
-        Math.random()*100 + "%";
-
+        Math.random()*100 + "vw";
 
     c.style.fontSize =
         (15 + Math.random()*25) + "px";
 
-
     c.style.animationDuration =
         (5 + Math.random()*6) + "s";
 
+    contenedor.appendChild(c);
 
-    document
-        .getElementById("corazones")
-        .appendChild(c);
-
-
-    setTimeout(()=>{
-
+    setTimeout(function(){
         c.remove();
-
     },11000);
 
 }
 
-
-setInterval(
-    crearCorazon,
-    500
-);
+setInterval(crearCorazon,700);
 
 
-
-/* =========================
-   UNIR CORAZONES
-========================= */
+/* UNIR CORAZONES */
 
 function unirCorazones(){
 
-    document
-        .getElementById("mapa")
-        .classList.add("unido");
+    const mapa =
+        document.getElementById("mapa");
 
+    const mensaje =
+        document.getElementById("mensajeDistancia");
 
-    setTimeout(()=>{
+    if(!mapa || !mensaje) return;
 
-        document
-            .getElementById("mensajeDistancia")
-            .classList.remove("oculto");
+    mapa.classList.add("unido");
+
+    setTimeout(function(){
+
+        mensaje.classList.remove("oculto");
+        mensaje.classList.add("aparecer");
 
     },2500);
 
 }
 
 
-
-/* =========================
-   HISTORIA
-========================= */
+/* HISTORIA */
 
 const historias = [
 
 `
-Hay canciones que simplemente suenan... 
-y hay canciones que parecen contar una historia.
+
+
+Lo primero que mire en ti fueron tus ojos,
+esa mirada que tiene algo que me encanta,
+y después esa sonrisa tan tuya
+que me derrite.
 
 <br><br>
 
-Cada vez que pienso en “Amorcito Corazón”, 
-inevitablemente pienso en ti.
-
-<br><br>
+Y sí...
+también porque eres muy guapo. ❤️
 `,
+
 `
-Y aquí estamos.
+Pero después descubrí
+que no solo eras una mirada bonita.
 
 <br><br>
 
-Cuatro meses después,
+También eres inteligente, noble
+amoroso y detallista.
 
-<br>
+<br><br>
 
-recordando aquel primer mensaje
-que comenzó todo. ❤️
+Y ahí entendí que
+no solamente me había gustado verte...
+me estaba gustando conocerte. ❤️
 `
 
 ];
 
-
-let paso=0;
-
+let paso = 0;
 
 function siguienteHistoria(){
 
     const elemento =
         document.getElementById("historia");
 
+    if(!elemento) return;
 
     if(paso < historias.length){
 
-        elemento.classList.remove(
-            "aparecer"
-        );
-
+        elemento.classList.remove("aparecer");
 
         void elemento.offsetWidth;
-
 
         elemento.innerHTML =
             historias[paso];
 
-
-        elemento.classList.add(
-            "aparecer"
-        );
-
+        elemento.classList.add("aparecer");
 
         paso++;
 
     }
-
     else{
 
         irA("voz");
@@ -1613,30 +1342,38 @@ function siguienteHistoria(){
 }
 
 
-
-/* =========================
-   MOSTRAR VERDAD
-========================= */
+/* VERDAD */
 
 function mostrarVerdad(){
 
-    document
-        .getElementById("verdad")
-        .classList.remove("oculto");
+    const verdad =
+        document.getElementById("verdad");
+
+    if(!verdad) return;
+
+    verdad.classList.remove("oculto");
+    verdad.classList.add("aparecer");
 
 }
 
 
-
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 function mostrarFinal(){
 
-    document
-        .getElementById("ultimo")
-        .classList.remove("oculto");
+    const ultimo =
+        document.getElementById("ultimo");
+
+    if(!ultimo) return;
+
+    ultimo.classList.remove("oculto");
+    ultimo.classList.add("aparecer");
+
+    for(let i=0;i<12;i++){
+
+        setTimeout(crearCorazon,i*100);
+
+    }
 
 }
 
